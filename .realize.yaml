@@ -1,0 +1,28 @@
+settings:
+  legacy:
+    force: false
+    interval: 0s
+schema:
+  - name: web-service
+    path: .
+    env:
+      DATABASE_CONNECTION: ""
+      DATABASE_NAME: ""
+      DATABASE_COLLECTION: ""
+    commands:
+      install:
+        status: true
+        method: go build -o ./bin/api
+      run:
+        status: true
+        method: ./bin/api
+    watcher:
+      extensions:
+        - go
+      paths:
+        - /
+      ignore:
+        paths:
+          - .git
+          - .realize
+          - vendor

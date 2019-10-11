@@ -1,0 +1,5 @@
+runtime: go112
+service: graphql
+#handlers:
+#  - url: /.*
+#    script: auto
